@@ -9,6 +9,9 @@ var config = require('./config')
 
 app.use(morgan('dev'));
 
+app.set('views', './lib/views');
+app.set('view engine', 'jade');
+
 appRouter(app);
 
 http
