@@ -1,13 +1,13 @@
-var React = require('react');
+var React = require('react')
+	,ReactDom = require('react-dom')
+	,Router = require('react-router').Router
+	,Route = require('react-router').Route
+	,browserHistory = require('react-router').browserHistory;
 
-var Container = React.createClass({
-	render: function () {
-		return (
-			<div>
-				Hello react!
-			</div>
-		);
-	}
-});
+var Index = require('./pages/index.jsx');
 
-React.render(document.getElementById('container'), Container);
+ReactDom.render((
+	<Router history={browserHistory}>
+		<Route path="/" name="root" component={Index}/>
+	</Router>
+), document.getElementById('container'));
